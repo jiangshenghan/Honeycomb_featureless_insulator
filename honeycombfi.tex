@@ -53,28 +53,35 @@
 
 
 \section{Schwinger boson construction}
-\subsection{Obstruction for single orbital Schwinger boson}
+In this section, we argue that conventional Schwinger boson formalism fails to give mean field ansatz for featureless insulators on spin-1/2 honeycomb lattice.
+Instead, we provide a novel two-orbital Schwinger boson formalism, which helps to construct ansatz for featureless insulators.
+
+\subsection{Single orbital Schwinger boson and monopole issues}
+
 \subsection{Two-orbital Schwinger boson formulation for spin-1/2}
-We introduce two orbitals of Schwinger bosons $b_{\alpha s}$, where $\alpha=1,2$ labels orbital, $s=\uparrow,\downarrow$ label spin. 
-Using these Schwinger bosons, spin operator is represented as
+We introduce two orbitals of Schwinger bosons $b_{\alpha s}$, where $\alpha=1,2$ labels orbital, $s=\uparrow,\downarrow$ labels spin. 
+The spin operator is represented by these Schwinger bosons as
 \begin{align}
   \vec{S}=\sum_{\alpha=1}^2\vec{S}_\alpha=\sum_{\alpha=1}^2\frac{1}{2}\sum_{s,s'=\uparrow,\downarrow}b_{\alpha s}^\dg\vec{\sigma}_{ss'}b_{\alpha s'}
   \label{}
 \end{align}
-
-The Schwinger boson representation leads to a enlarged Hilbert space, and one should project out unphysical states to represent physical spin states. There are several constraints for physical states. The first constraint is chosen to be that the total boson number is three
+The Schwinger boson representation leads to an enlarged Hilbert space, and one should project out unphysical states to represent physical spin-1/2 states.
+There are several constraints for physical states. 
+The first constraint is chosen to be that the total boson number is fixed to be three per site:
 \begin{align}
   n=\sum_{\alpha}n_\alpha=\sum_{\alpha s}b_{\alpha s}^\dg b_{\alpha s}=3
   \label{}
 \end{align}
-There are totally 20 states satisfying this condition, they can be decomposed as four spin-3/2 and two spin-1/2: 
+There are totally 20 states satisfying this condition.
+It is easy to check that these 20 states can be organized to four spin-3/2's and two spin-1/2's: 
 \begin{align}
   \left( \bigoplus_{i=1}^4\frac{3}{2} \right) \oplus \left(  \bigoplus_{i=1}^2\frac{1}{2} \right)
   \label{}
 \end{align}
 The highest weight states for spin-3/2's are
 \begin{align}
-  \frac{1}{\sqrt{6}}\left(b_{1\uparrow}^\dg \right)^3|0\rangle,\;\frac{1}{\sqrt{6}}\left(b_{2\uparrow}^\dg \right)^3|0\rangle,\;\frac{1}{\sqrt{2}}\left( b_{1\uparrow}^\dg \right)^2 b_{2\uparrow}^\dg|0\rangle,\;\frac{1}{\sqrt{2}}b_{1\uparrow}^\dg \left(b_{2\uparrow}^\dg\right)^2|0\rangle 
+  &\frac{1}{\sqrt{6}}\left(b_{1\uparrow}^\dg \right)^3|0\rangle~,\quad\frac{1}{\sqrt{6}}\left(b_{2\uparrow}^\dg \right)^3|0\rangle~,\notag\\
+  &\frac{1}{\sqrt{2}}\left( b_{1\uparrow}^\dg \right)^2 b_{2\uparrow}^\dg|0\rangle~,\quad \frac{1}{\sqrt{2}}b_{1\uparrow}^\dg \left(b_{2\uparrow}^\dg\right)^2|0\rangle~. 
   \label{}
 \end{align}
 And the highest weight states for spin-1/2's are
@@ -84,12 +91,16 @@ And the highest weight states for spin-1/2's are
   \label{}
 \end{align}
 
-Define the orbital pseudo-spins $\vec{T}$ as
+We define the orbital pseudo-spins $\vec{T}$ as
 \begin{align}
   \vec{T}=\sum_{s,\alpha,\beta}\frac{1}{2}b_{\alpha s}^\dg\vec{\tau}_{\alpha\beta}b_{\beta s}
   \label{}
 \end{align}
-where $\vec{\tau}$ are orbital Pauli matrix. Thus, these 20 states can be organized $SU(2)_{spin}\times SU(2)_{obit}$ representation $\left( \frac{3}{2},\frac{3}{2} \right)\oplus\left( \frac{1}{2},\frac{1}{2} \right)$. The physical states are contained in sector $\left( \frac{1}{2},\frac{1}{2} \right)$. In $(S^z,T^z)$ eigenbasis, these four states are
+where $\vec{\tau}$ are orbital Pauli matrix. 
+Thus, these 20 states can be further organized to $SU(2)_{spin}\times SU(2)_{obit}$ representation $\left( \frac{3}{2},\frac{3}{2} \right)\oplus\left( \frac{1}{2},\frac{1}{2} \right)$.
+The physical spin-1/2 states are contained in sector $\left( \frac{1}{2},\frac{1}{2} \right)$. 
+
+In $(S^z,T^z)$ eigenbasis, these four states read
 \begin{align}
   \begin{pmatrix}
   \frac{1}{\sqrt{3}}\,b_{1\uparrow}^\dg\left( b_{1\uparrow}^\dg b_{2\downarrow}^\dg-b_{1\downarrow}^\dg b_{2\uparrow}^\dg \right) & 
@@ -100,21 +111,25 @@ where $\vec{\tau}$ are orbital Pauli matrix. Thus, these 20 states can be organi
   |0\rangle
   \label{eq:spin-1/2_orbit-1/2_sector}
 \end{align}
-The physical spin-1/2 states should be a linear combination of the columns in Eq.(\ref{eq:spin-1/2_orbit-1/2_sector}):
+where rows corresponds to spin $\pm1/2$, and columns corresponds to orbital $\pm1/2$.
+The physical spin-1/2 states can be chosen as an arbitrary linear combination of the columns in Eq.~(\ref{eq:spin-1/2_orbit-1/2_sector}):
 \begin{align}
-  |s_p\rangle=\ee^{\ii\varphi}\left(\cos\left( \frac{\theta}{2} \right)|s_1\rangle+\ee^{\ii\phi}\sin\left( \frac{\theta}{2} \right)|s_2\rangle \right)
-  \equiv (|s_1\rangle, |s_2\rangle) \cdot \begin{pmatrix}w_1\\w_2\end{pmatrix} \label{}
+  |s_p\rangle&=\ee^{\ii\varphi}\left(\cos\left( \frac{\theta}{2} \right)|s_1\rangle+\ee^{\ii\phi}\sin\left( \frac{\theta}{2} \right)|s_2\rangle \right)\notag\\
+  &\equiv (|s_1\rangle, |s_2\rangle) \cdot \begin{pmatrix}w_1\\w_2\end{pmatrix} \label{}
 \end{align}
-with $\theta\in[0,\pi]$ and $\phi,\varphi\in[0,2\pi)$. Here, $|s_i\rangle$ denotes spin state constructed by operators of $i$th column in Eq.(\ref{eq:spin-1/2_orbit-1/2_sector}). For this choice, we get additional constraint as
+where $w_1=\ee^{\ii\varphi}\cos(\theta/2)$, $w_2=\ee^{\ii\varphi}\ee^{\ii\phi}\sin(\theta/2)$ with $\theta\in[0,\pi]$, $\phi,\varphi\in[0,2\pi)$.
+$|s_i\rangle$ denotes spin state constructed by operators of $i$th column in Eq.~(\ref{eq:spin-1/2_orbit-1/2_sector}). 
+
+For this choice, we get additional constraint as
 \begin{align}
-  \vec{n}\cdot\vec{T}=1
+  \vec{n}\cdot\vec{T}=\frac{1}{2}
   \label{}
 \end{align}
 where $\vec{n}=\left( \sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta \right)$.
 
-The gauge degree of freedom is $U(1)\times U(1)$:
+For a given $\vec{n}$, the gauge degree of freedom is $U(1)\times U(1)$:
 \begin{align}
-  b\rightarrow \ee^{\ii\theta}\,b,\quad b\rightarrow\ee^{\ii\phi(\vec{n}\cdot\vec{\tau})}\,b
+  b\rightarrow \ee^{-\ii\theta}\,b~,\quad b\rightarrow\ee^{-\ii\phi(\vec{n}\cdot\vec{\tau})}\,b
   \label{eq:parton_gauge_freedom}
 \end{align}
 To see this, we re-express physical states as
@@ -123,14 +138,27 @@ To see this, we re-express physical states as
   (b^\dg\cdot w_{\vec{n}})(b^\dg\cdot \sigma^y\tau^y \cdot b^*) |0\rangle
   \label{eq:parton_phys_state}
 \end{align}
-where $w_{\vec{n}}=\sigma^0\otimes\begin{pmatrix}w_1\\w_2\end{pmatrix}$ acts nontrivially on orbital space. Notice that $w_{\vec{n}}$ is invariant (up to a phase factor) under operation rotation along $\vec{n}$ axis: $\ee^{\ii\phi}w_{\vec{n}}=\ee^{\ii\phi(\vec{n}\cdot\vec{\tau})}\cdot w_{\vec{n}}$. Further, the second term in Eq.(\ref{eq:parton_phys_state}) is a spin and orbital singlet, which is invariant under orbital $SU(2)$ transformation. Thus, we conclude, gauge transformation defined in Eq.(\ref{eq:parton_gauge_freedom}) are the only transformation leave physical states invariant up to an overall phase factor. More specifically, physical states carry background charge $(3,1)$.
+where $w_{\vec{n}}=\sigma^0\otimes\begin{pmatrix}w_1\\w_2\end{pmatrix}$, which acts nontrivially on orbital space. 
+Notice that $w_{\vec{n}}$ is invariant (up to a phase factor) under operation rotation along $\vec{n}$ axis: $\ee^{\ii\phi}w_{\vec{n}}=\ee^{\ii\phi(\vec{n}\cdot\vec{\tau})}\cdot w_{\vec{n}}$.
+The second term in Eq.~(\ref{eq:parton_phys_state}) is a spin and orbital singlet, which is invariant under orbital $SU(2)$ transformation.
+We then conclude that gauge transformations defined in Eq.~(\ref{eq:parton_gauge_freedom}) leaves physical states invariant up to overall phase factors. 
+These overall phase factors can be interpreted as the background gauge charges carried by physical states.
+Under gauge transformation in Eq.~(\ref{eq:parton_gauge_freedom}), we have
+\begin{align}
+  |s_p\rangle\rightarrow\ee^{\ii 3\theta}|s_p\rangle~,\quad |s_p\rangle\rightarrow\ee^{\ii \phi}|s_p\rangle
+  \label{}
+\end{align}
+respectively.
+In other words, physical states carry background charge $(3,1)$ under $U(1)\times U(1)$ gauge group.
 
-In the following, without loss of generality, we will focus on the case with $w=(1,0)$. Then, gauge transformation becomes
+In the following, we focus on the case where $w=(1,0)$. 
+In this case, gauge transformation reads
 \begin{align}
   b_{\boldsymbol{r}}\rightarrow \ee^{\ii\theta(\boldsymbol{r})}\,b_{\boldsymbol{r}},\quad b_{\boldsymbol{r}}\rightarrow\ee^{\ii\phi(\boldsymbol{r})\tau^z}\,b_{\boldsymbol{r}}
   \label{}
 \end{align}
-Here, we consider the site-dependent gauge transformation on a lattice, where $\boldsymbol{r}$ denotes lattice sites.
+where $\boldsymbol{r}$ labels the lattice site.
+Notice that gauge transformation is in general site-dependent.
 
 
 \section{Classification of featureless insulators by $PSG$}
